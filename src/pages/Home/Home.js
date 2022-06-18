@@ -55,11 +55,11 @@ const Home = () => {
                 </div>
 
             </section>
-
+            {/* dental care section */}
             <section className='my-16'>
                 <div class="hero bg-base-100 lg:w-3/4 mx-auto">
                     <div class="hero-content grid lg:grid-cols-2">
-                        <img src={treatment} alt='' class="rounded" />
+                        <img src={treatment} alt='' class="rounded w-2/4" />
                         <div>
                             <h1 class="lg:text-3xl text-2xl font-bold">Exceptional Dental Care, on Your Terms</h1>
                             <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
@@ -72,7 +72,7 @@ const Home = () => {
             <section>
                 <div class="hero my-9" style={{ backgroundImage: `url(${appointment})` }}>
                     <div class="grid lg:grid-cols-2 items-center">
-                        <img src={doctor} class=" rounded-lg hidden lg:block mt-[-110px]" />
+                        <img src={doctor} class=" rounded-lg hidden lg:block w-2/4 mt-[-110px]" />
                         <div className='text-white p-6'>
                             <h1 class="text-secondary">Appointment</h1>
                             <h1 class="text-3xl font-bold">Make an appointment Today</h1>
@@ -82,7 +82,7 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-
+            {/* Testimonial section */}
             <section className='px-5 lg:px-10 my-10'>
                 <div className="flex justify-between">
                     <div>
