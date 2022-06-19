@@ -18,15 +18,15 @@ import doctor from '../../assets/images/doctor.png';
 import people1 from '../../assets/images/people1.png';
 import people2 from '../../assets/images/people2.png';
 import people3 from '../../assets/images/people3.png';
-import Review from '../../Utilities/Review/Review';
-import Footer from '../../Utilities/Footer/Footer';
+import Review from './Review';
+import Footer from '../Shared/Footer/Footer';
 
 const Home = () => {
     return (
         <div>
             {/* title */}
             <SetTitle>Home</SetTitle>
-
+            {/* chair section */}
             <section style={{ backgroundImage: `url(${bg})` }} class="hero min-h-screen bg-base-100 bg-cover bg-no-repeat">
                 <div class="hero-content flex-col lg:flex-row-reverse">
                     <img src={chair} className='lg:w-1/2' />
@@ -72,7 +72,7 @@ const Home = () => {
             <section>
                 <div class="hero my-9" style={{ backgroundImage: `url(${appointment})` }}>
                     <div class="grid lg:grid-cols-2 items-center">
-                        <img src={doctor} class=" rounded-lg hidden lg:block w-2/4 mt-[-110px]" />
+                        <img src={doctor} class=" rounded-lg hidden lg:block w-2/4 mx-auto mt-[-110px]" />
                         <div className='text-white p-6'>
                             <h1 class="text-secondary">Appointment</h1>
                             <h1 class="text-3xl font-bold">Make an appointment Today</h1>
