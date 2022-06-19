@@ -14,6 +14,7 @@ const Calendar = ({ selected, setSelected }) => {
                         mode='single'
                         selected={selected}
                         onSelect={setSelected}
+                        className='shadow-2xl rounded-xl'
                     />
                 </div>
             </div>
