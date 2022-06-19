@@ -10,7 +10,7 @@ const AvailableServices = ({ selectedService }) => {
     return (
         <div className='grid lg:grid-cols-3 gap-5 pt-10 px-3'>
             {services.map(service =>
-                <div className='text-center py-10 shadow-lg rounded-xl grid gap-5 justify-center'>
+                <div key={service?._id} className='text-center py-10 shadow-lg rounded-xl grid gap-5 justify-center'>
                     <h1 className='text-lg font-bold text-secondary'>{service?.name}</h1 >
                     {service?.slots?.length > 0 ? <p> {service?.slots[0]} </p> : <p className='text-red-600'>No Slots Available</p>}
                     <label for="my-modal" class="btn bg-gradient-to-r from-secondary to-primary text-base-100 border-none" onClick={() => selectedService(service)} disabled={!service?.slots?.length}>Book Appointment</label>

@@ -12,7 +12,6 @@ const Appointment = () => {
     const selectedService = (service) => {
         setService(service)
     }
-    console.log(service)
     return (
         <section>
 
