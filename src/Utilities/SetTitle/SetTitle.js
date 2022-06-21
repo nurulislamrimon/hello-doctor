@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 
 const SetTitle = ({ children }) => {
     return (
-        <Helmet>
-            <title>Hello Doctors - {children}</title>
-        </Helmet>
+        useEffect(() => {
+            <Helmet>
+                <title>Hello Doctors - {children}</title>
+            </Helmet>
+        }, [children])
     );
 };
 

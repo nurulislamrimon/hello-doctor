@@ -1,6 +1,7 @@
 import { format } from 'date-fns';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const Modal = ({ selected, service }) => {
@@ -13,8 +14,14 @@ const Modal = ({ selected, service }) => {
         const userName = e.target.userName.value;
         const mobile = e.target.mobile.value;
         const email = e.target.email.value;
-        const newBooking = { selectedService, date, time, userName, mobile, email }
-        console.log(newBooking);
+        const newAppointment = { selectedService, date, time, userName, mobile, email }
+        fetch('http://localhost:5000/appointment', {
+            method: 'POST',
+            headers: { 'content-type': "application/json" },
+            body: JSON.stringify(newAppointment)
+        })
+            .then(res => res.json())
+            .then(data => data.acknowledged ? toast.success(`You made an appointment for ${date} time ${time}`) : toast.warn('Sorry! Your request is faild'))
     }
     return (
         <div>
@@ -26,13 +33,13 @@ const Modal = ({ selected, service }) => {
                     <form onSubmit={handleSubmit}>
                         <h3 className='font-bold mb-4'>{service?.name}</h3>
                         <div className="grid gap-5">
-                            <input className="input input-bordered w-full" type="text" name='date' value={format(selected, 'PP')} disabled />
+                            <input className="input input-bordered w-full" type="text" name='date' value={format(selected, 'PP') || ''} disabled />
                             <select name='time' className="select w-full select-bordered">
                                 {service?.slots?.map(slot => <option key={slot}>{slot}</option>)}
                             </select>
-                            <input name='userName' className="input input-bordered w-full" type="text" value={user?.displayName} disabled />
+                            <input name='userName' className="input input-bordered w-full" type="text" value={user?.displayName || ''} disabled />
                             <input name='mobile' className="input input-bordered w-full" type="text" placeholder='01*********' required />
-                            <input name='email' className="input input-bordered w-full" type="text" value={user?.email} disabled />
+                            <input name='email' className="input input-bordered w-full" type="text" value={user?.email || ''} disabled />
                             <button className='py-5 btn w-full'>Submit</button>
                         </div>
                     </form>
