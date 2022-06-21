@@ -25,10 +25,6 @@ const Appointment = () => {
                 <Modal selected={selected} service={service} />
             </section>
 
-            <section>
-                <h3 className='text-center text-2xl my-10 text-secondary'>Available slots for</h3>
-            </section>
-
 
         </section>
     );

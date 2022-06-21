@@ -27,12 +27,12 @@ const Home = () => {
             {/* title */}
             <SetTitle>Home</SetTitle>
             {/* chair section */}
-            <section style={{ backgroundImage: `url(${bg})` }} class="hero min-h-screen bg-base-100 bg-cover bg-no-repeat">
-                <div class="hero-content flex-col lg:flex-row-reverse">
+            <section style={{ backgroundImage: `url(${bg})` }} className="hero min-h-screen bg-base-100 bg-cover bg-no-repeat">
+                <div className="hero-content flex-col lg:flex-row-reverse">
                     <img src={chair} className='lg:w-1/2' />
                     <div>
-                        <h1 class="text-5xl font-bold">Box Office News!</h1>
-                        <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                        <h1 className="text-5xl font-bold">Box Office News!</h1>
+                        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                         <GradientBtn>Get Started</GradientBtn>
                     </div>
                 </div>
@@ -57,12 +57,12 @@ const Home = () => {
             </section>
             {/* dental care section */}
             <section className='my-16'>
-                <div class="hero bg-base-100 lg:w-3/4 mx-auto">
-                    <div class="hero-content grid lg:grid-cols-2">
-                        <img src={treatment} alt='' class="rounded w-2/4" />
+                <div className="hero bg-base-100 lg:w-3/4 mx-auto">
+                    <div className="hero-content grid lg:grid-cols-2">
+                        <img src={treatment} alt='' className="rounded w-2/4" />
                         <div>
-                            <h1 class="lg:text-3xl text-2xl font-bold">Exceptional Dental Care, on Your Terms</h1>
-                            <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                            <h1 className="lg:text-3xl text-2xl font-bold">Exceptional Dental Care, on Your Terms</h1>
+                            <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                             <GradientBtn>Get Started</GradientBtn>
                         </div>
                     </div>
@@ -70,13 +70,13 @@ const Home = () => {
             </section>
 
             <section>
-                <div class="hero my-9" style={{ backgroundImage: `url(${appointment})` }}>
-                    <div class="grid lg:grid-cols-2 items-center">
-                        <img src={doctor} class=" rounded-lg hidden lg:block w-2/4 mx-auto mt-[-110px]" />
+                <div className="hero my-9" style={{ backgroundImage: `url(${appointment})` }}>
+                    <div className="grid lg:grid-cols-2 items-center">
+                        <img src={doctor} className=" rounded-lg hidden lg:block w-2/4 mx-auto mt-[-110px]" />
                         <div className='text-white p-6'>
-                            <h1 class="text-secondary">Appointment</h1>
-                            <h1 class="text-3xl font-bold">Make an appointment Today</h1>
-                            <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                            <h1 className="text-secondary">Appointment</h1>
+                            <h1 className="text-3xl font-bold">Make an appointment Today</h1>
+                            <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                             <GradientBtn>Get Started</GradientBtn>
                         </div>
                     </div>
@@ -102,9 +102,9 @@ const Home = () => {
                 <h6 className="text-secondary text-center font-bold">Contact Us</h6>
                 <h2 className='text-2xl text-center text-white'>Stay connected with us</h2>
                 <div className="flex flex-col items-center">
-                    <input type="text" placeholder="Email Address" class="input w-full max-w-xs my-3" />
-                    <input type="text" placeholder="Subject" class="input w-full max-w-xs my-3" />
-                    <textarea type="text" placeholder="Your message" class="textarea resize-none w-full max-w-xs my-3" />
+                    <input type="text" placeholder="Email Address" className="input w-full max-w-xs my-3" />
+                    <input type="text" placeholder="Subject" className="input w-full max-w-xs my-3" />
+                    <textarea type="text" placeholder="Your message" className="textarea resize-none w-full max-w-xs my-3" />
                     <GradientBtn>Submit</GradientBtn>
                 </div>
             </section>

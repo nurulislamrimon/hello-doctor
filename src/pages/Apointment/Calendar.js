@@ -6,8 +6,8 @@ import { DayPicker } from 'react-day-picker';
 
 const Calendar = ({ selected, setSelected }) => {
     return (
-        <div style={{ backgroundImage: `url(${bg})` }} class="hero lg:py-24 bg-base-100 bg-cover bg-no-repeat">
-            <div class="hero-content flex-col lg:flex-row-reverse lg:w-3/4">
+        <div style={{ backgroundImage: `url(${bg})` }} className="hero lg:py-24 bg-base-100 bg-cover bg-no-repeat">
+            <div className="hero-content flex-col lg:flex-row-reverse lg:w-3/4 justify-between">
                 <img src={chair} className='lg:w-1/2' />
                 <div>
                     <DayPicker
