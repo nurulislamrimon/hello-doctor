@@ -1,15 +1,20 @@
 import React, { useEffect, useState } from 'react';
+import { useQuery } from 'react-query';
+import Spinner from '../../Utilities/Spinner/Spinner';
+import Modal from './Modal';
 
-const AvailableServices = ({ selectedService, date }) => {
-    const [services, setServices] = useState([]);
-    useEffect(() => {
+const AvailableServices = ({ selectedService, date, serviceInfo, setServiceInfo }) => {
+    const { data: services, isLoading, refetch } = useQuery(['services', date], () =>
         fetch(`http://localhost:5000/services?date=${date}`)
             .then(res => res.json())
-            .then(data => setServices(data))
-    }, [date])
+    )
+
+    if (isLoading) {
+        return <Spinner></Spinner>
+    }
     return (
         <div className='grid lg:grid-cols-3 gap-5 pt-10 px-3'>
-            {services.map(service =>
+            {services?.map(service =>
                 <div key={service?._id} className='text-center py-10 shadow-lg rounded-xl grid gap-5 justify-center'>
                     <h1 className='text-lg font-bold text-secondary'>{service?.name}</h1 >
                     {service?.slots?.length > 0 ? <div>
@@ -19,6 +24,8 @@ const AvailableServices = ({ selectedService, date }) => {
                     <label htmlFor="my-modal" className="btn bg-gradient-to-r from-secondary to-primary text-base-100 border-none" onClick={() => selectedService(service)} disabled={!service?.slots?.length}>Book Appointment</label>
                 </div>)
             }
+
+            {serviceInfo && <Modal serviceInfo={serviceInfo} setServiceInfo={setServiceInfo} refetch={refetch} />}
         </div >
     );
 };

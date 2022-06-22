@@ -2,10 +2,12 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import auth from '../../firebase.init'
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth'
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
     const [
         signInWithGoogle,
         user, loading, error,
@@ -16,7 +18,7 @@ const Login = () => {
         console.log(data);
     }
     if (user) {
-        navigate('/')
+        navigate(from, { replace: true })
     }
 
     return (
