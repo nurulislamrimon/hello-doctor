@@ -21,7 +21,7 @@ const Appointment = () => {
                 <h3 className='text-center text-2xl mt-6 text-secondary'>Available Services on  {format(selected, 'PP')}</h3>
                 <h3 className='text-center text-xl mt-3 text-gray-400'>Please select a service.</h3>
 
-                <AvailableServices selectedService={selectedService} />
+                <AvailableServices selectedService={selectedService} date={format(selected, 'PP')} />
                 <Modal selected={selected} service={service} />
             </section>
 

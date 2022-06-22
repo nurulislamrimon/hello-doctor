@@ -8,20 +8,20 @@ const Modal = ({ selected, service }) => {
     const [user] = useAuthState(auth);
     const handleSubmit = (e) => {
         e.preventDefault();
-        const selectedService = service;
+        const serviceName = service.name;
         const date = e.target.date.value;
         const time = e.target.time.value;
         const userName = e.target.userName.value;
         const mobile = e.target.mobile.value;
         const email = e.target.email.value;
-        const newAppointment = { selectedService, date, time, userName, mobile, email }
+        const newAppointment = { serviceName, date, time, userName, mobile, email }
         fetch('http://localhost:5000/appointment', {
             method: 'POST',
             headers: { 'content-type': "application/json" },
             body: JSON.stringify(newAppointment)
         })
             .then(res => res.json())
-            .then(data => data.acknowledged ? toast.success(`You made an appointment for ${date} time ${time}`) : toast.warn('Sorry! Your request is faild'))
+            .then(data => data.acknowledged ? toast.success(`You made an appointment for ${date} time ${time}`) : toast.warn('Looks like you already have an appointment!'))
     }
     return (
         <div>
