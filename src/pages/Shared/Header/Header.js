@@ -12,6 +12,8 @@ const Header = () => {
         <CustomLink to='/about' className='py-1 lg:px-4 lg:py-2 lg:mx-4 rounded'>About</CustomLink>
         <CustomLink to='/appointment' className='py-1 lg:px-4 lg:py-2 lg:mx-4 rounded'>Appointment</CustomLink>
         <CustomLink to='/reviews' className='py-1 lg:px-4 lg:py-2 lg:mx-4 rounded'>Reviews</CustomLink>
+        {user && <CustomLink to='/dashboard' className='py-1 lg:px-4 lg:py-2 lg:mx-4 rounded'>Dashboard</CustomLink>
+        }
         <CustomLink to='/contactus' className='py-1 lg:px-4 lg:py-2 lg:mx-4 rounded'>Contact Us</CustomLink>
         {user ? <button className=' lg:px-4 lg:mx-4 rounded' onClick={() => signOut(auth)}>Log out</button> : <CustomLink to='/login' className='py-1 lg:px-4 lg:py-2 lg:mx-4 rounded'>Login</CustomLink>}
     </>
