@@ -3,7 +3,7 @@ import React from 'react';
 const Sectest = () => {
     return (
         <div>
-            secTest
+            Second testing
         </div>
     );
 };
